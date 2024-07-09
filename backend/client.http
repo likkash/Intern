@@ -1,0 +1,49 @@
+GET http://localhost:1100/
+
+###
+
+//GET http://localhost:1100/term
+
+
+###
+
+//GET http://localhost:1100/dp/10/6/2
+
+###
+
+POST http://localhost:1100/include
+Content-Type: application/json
+
+{
+    "hospitalName":"LA Hospital",
+    "hospitalAddress":"Mallur",
+    "hospitalSpeciality":["heart","lungs","brain","cancer","eye","Typhoid"]
+}
+
+
+###
+
+PUT http://localhost:1100/update
+Content-Type: application/json
+
+{
+    "hospitalName":"SRM Hospital",
+    "hospitalAddress":"Erode",
+    "hospitalSpeciality":["heart","cancer"]
+}
+
+
+###
+
+PUT http://localhost:1100/change/3
+Content-Type: application/json
+
+{
+    "hospitalName":"Vetri Hospital",
+    "hospitalAddress":"Raspiram",
+    "hospitalSpeciality":["heart","cancer"]
+}
+
+###
+
+DELETE http://localhost:1100/remove/3
