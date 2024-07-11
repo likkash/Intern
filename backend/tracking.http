@@ -1,0 +1,49 @@
+GET http://localhost:1234/
+
+###
+
+POST http://localhost:1234/admit
+Content-Type: application/json
+
+{
+    "patientId": 123,
+    "patientName": "Likkash",
+    "patientAge": 19,
+    "patientBloodGroup": "B+v",
+    "patientAddress": "Mallur",
+    "patientContact": 6374746756,
+    "issue": "Fever",
+    "status": "Treatment"
+}
+
+###
+
+
+DELETE http://localhost:1234/discharge/Likkash
+
+###
+
+
+GET http://localhost:1234/issue/Fever
+
+###
+
+
+PUT http://localhost:1234/updateFever
+
+###
+
+
+PUT http://localhost:1234/updateCovid
+
+###
+
+
+DELETE http://localhost:1234/RemoveAge/19
+
+###
+
+
+DELETE http://localhost:1234/RemoveStatus/Terminated
+
+###
