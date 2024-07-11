@@ -1,49 +1,49 @@
-GET http://localhost:1234/
+GET http://localhost:1234/hospital
 
 ###
 
-POST http://localhost:1234/admit
+POST http://localhost:1234/hospital/admit
 Content-Type: application/json
 
 {
-    "patientId": 123,
-    "patientName": "Likkash",
-    "patientAge": 19,
-    "patientBloodGroup": "B+v",
-    "patientAddress": "Mallur",
-    "patientContact": 6374746756,
-    "issue": "Fever",
-    "status": "Treatment"
+    "patientId":126,
+    "patientName":"Dharun",
+    "patientAge":20,
+    "patientBloodGroup":"O+ve",
+    "patientAddress":"Salem",
+    "patientContact":9998889998,
+    "issue":"Head-Ache",
+    "status":"Discharge"
 }
 
 ###
 
 
-DELETE http://localhost:1234/discharge/Likkash
+DELETE http://localhost:1234/hospital/discharge/Likkash
 
 ###
 
 
-GET http://localhost:1234/issue/Fever
+GET http://localhost:1234/hospital/issue/Fever
 
 ###
 
 
-PUT http://localhost:1234/updateFever
+PUT http://localhost:1234/hospital/updateFever
 
 ###
 
 
-PUT http://localhost:1234/updateCovid
+PUT http://localhost:1234/hospital/updateCovid
 
 ###
 
 
-DELETE http://localhost:1234/RemoveAge/19
+DELETE http://localhost:1234/hospital/RemoveAge/19
 
 ###
 
 
-DELETE http://localhost:1234/RemoveStatus/Terminated
+DELETE http://localhost:1234/hospital/RemoveStatus/Terminated
 
 ###
