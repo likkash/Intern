@@ -1,4 +1,4 @@
-GET http://localhost:1234/hospital
+GET http://localhost:1234/hospital/
 
 ###
 
