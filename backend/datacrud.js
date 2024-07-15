@@ -67,7 +67,10 @@ router.delete('/RemoveStatus/:status',async(request,response)=>{
     response.json(data)
 })
 
-
+router.delete('/erase/:id',async(request,response)=>{
+    const data = await HospitalInfo.findOneAndDelete({_id:{'$eq':request.params.id}})
+    response.json(data)
+})
 
 
 module.exports=router

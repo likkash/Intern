@@ -6,14 +6,14 @@ POST http://localhost:1234/hospital/admit
 Content-Type: application/json
 
 {
-    "patientId":126,
-    "patientName":"Dharun",
-    "patientAge":20,
-    "patientBloodGroup":"O+ve",
-    "patientAddress":"Salem",
-    "patientContact":9998889998,
-    "issue":"Head-Ache",
-    "status":"Discharge"
+    "patientId": 123,
+    "patientName": "Likkash",
+    "patientAge": 19,
+    "patientBloodGroup": "B+v",
+    "patientAddress": "Mallur",
+    "patientContact": 6374746756,
+    "issue": "Fever",
+    "status": "Treatment"
 }
 
 ###
@@ -45,5 +45,10 @@ DELETE http://localhost:1234/hospital/RemoveAge/19
 
 
 DELETE http://localhost:1234/hospital/RemoveStatus/Terminated
+
+###
+
+
+DELETE http://localhost:1234/hospital/erase/6694e67e57744e94bc4d6fd3
 
 ###
