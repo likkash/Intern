@@ -10,6 +10,8 @@ import { callPost } from "./service";
 import InputLabel from '@mui/material/InputLabel';
 import { FormControl } from "@mui/material";
 import Grid from '@mui/material/Grid';
+import './back.css'
+
 
 
 export const Form =() => {
@@ -43,25 +45,22 @@ export const Form =() => {
 
     return(
         <Container>
+            
             <div className="row justify-content-center ">
-                <div className="col-12 col-md-8 col-lg-6 rounded-2 shadow-lg ">
-                    <p className="text-primary display-6 text-center">New Patient Form</p>
-                    <div className="row justify-content-around align-items-center mb-2">
+                <div className="col-12 col-md-8 col-lg-8 rounded-4 shadow-lg " style={{padding: '20px',marginTop:'60px', backgroundColor: '#fff'}}>
+                    <p className="text-success display-6 text-center">Patient Details Form</p>
                        <div className="row justify-content-around mb-2">
                         <TextField 
-                            className="col-12 col-md-8 col-sm-6"
+                            className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
                             name="patientId" 
                             value={datatype.patientId}
                             label="Patient ID" 
-                            variant="outlined" 
-                        />
-                        </div>
-                    </div>
-                    <div className="row justify-content-around mb-2">
+                            variant="filled" 
+                        />                      
                         <TextField 
-                            className="col-12 col-md-8 mb-sm-2 col-sm-6"
+                            className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
                             value={datatype.patientName}
@@ -69,22 +68,20 @@ export const Form =() => {
                             label="Patient Name" 
                             variant="outlined" 
                         />
-                    </div>
-                    <div className="row justify-content-around mb-2 ">
+                           </div>
+                           <div className="row justify-content-around mb-2">
                         <TextField 
-                            className="col-12 col-md-8 mb-2 col-sm-6 "
+                            className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             name="patientAge"
                             onChange={collecting} 
                             value={datatype.patientAge}
                             label="Patient Age" 
-                            variant="outlined" 
+                            variant="filled" 
                         />
-                    </div>
-                    <div className="row justify-content-around mb-2">
 
                         <TextField 
-                            className="col-12 col-md-8 mb-sm-2 col-sm-6"
+                            className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
                             value={datatype.patientBloodGroup}
@@ -96,7 +93,7 @@ export const Form =() => {
                     </div>
                     <div className="row justify-content-around mb-2">
                         <TextField 
-                            className="col-12 col-md-8 mb-sm-2 col-sm-6"
+                            className="col-md-6 mb-sm-2 col-sm-6"
                             color="primary"
                             onChange={collecting}
                             value={datatype.patientAddress}
@@ -107,18 +104,16 @@ export const Form =() => {
                     </div>
                     <div className="row justify-content-around mb-2">
                         <TextField 
-                            className="col-12 col-md-8 mb-2 col-sm-6"
+                            className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
                             value={datatype.patientContact}
                             name="patientContact" 
                             label="Patient Contact" 
-                            variant="outlined" 
+                            variant="filled" 
                         />
-                    </div>
-                    <div className="row justify-content-around mb-2">
                         <TextField 
-                            className="col-12 col-md-8 mb-2 col-sm-6"
+                            className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
                             name="issue" 
@@ -150,10 +145,10 @@ export const Form =() => {
 
 
                     <div className="row justify-content-around mt-2 mb-2">
-                        <Button onClick={publish} variant="outlined" className="col-2 bg-info " style={{color:'white'}}>
+                        <Button onClick={publish} variant="outlined" className="col-2 bg-primary " style={{color:'white'}}>
                            Submit
                         </Button>
-                        <Button variant="outlined" className="col-2 bg-info">
+                        <Button variant="outlined" className="col-2 bg-danger" style={{color:'white'}}>
                             <BackspaceIcon/>
                         </Button>
                     </div>
