@@ -6,14 +6,14 @@ POST http://localhost:1234/hospital/admit
 Content-Type: application/json
 
 {
-    "patientId": 123,
-    "patientName": "Likkash",
-    "patientAge": 19,
-    "patientBloodGroup": "B+v",
-    "patientAddress": "Mallur",
-    "patientContact": 6374746756,
-    "issue": "Fever",
-    "status": "Treatment"
+    "patientId":125,
+    "patientName":"Vaishnavi",
+    "patientAge":21,
+    "patientBloodGroup":"B+v",
+    "patientAddress":"Mallur",
+    "patientContact":8838588068,
+    "issue":"Head-Ache",
+    "status":"Discharge"
 }
 
 ###
@@ -50,5 +50,28 @@ DELETE http://localhost:1234/hospital/RemoveStatus/Terminated
 
 
 DELETE http://localhost:1234/hospital/erase/6694e67e57744e94bc4d6fd3
+
+###
+
+PUT http://localhost:1234/hospital
+Content-Type: application/json
+
+{
+    "_id": "669898bf6c8322d155d407fe",
+    "patientId":125,
+    "patientName":"Vaishnavi",
+    "patientAge":50,
+    "patientBloodGroup":"B+v",
+    "patientAddress":"Mallur",
+    "patientContact":8838588068,
+    "issue":"Head-Ache",
+    "status":"Discharge"
+}
+
+
+###
+
+GET http://localhost:1234/hospital/669503de6e660ed391bc01d1
+
 
 ###

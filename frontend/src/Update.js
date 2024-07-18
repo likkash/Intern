@@ -1,22 +1,25 @@
 import React from "react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Container from '@mui/material/Container';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import { callPost } from "./service";
 import InputLabel from '@mui/material/InputLabel';
 import { FormControl } from "@mui/material";
+import { callFetchOne, callPost, callUpdate } from "./service";
+import { useNavigate, useParams } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import './back.css'
 
+export const Update =() => {
+
+    const{id}=useParams()
 
 
-export const Form =() => {
-
-    const[datatype,setDatatype]=useState({
+    const[logistics,setLogistics]=useState({
+        "_id":0,
         "patientId":0,
         "patientName":"",
         "patientAge":0,
@@ -27,9 +30,18 @@ export const Form =() => {
         "status":""
     })
 
+    const gatherInfo=async()=>{
+        const t = await callFetchOne(id)
+        setLogistics(t.data)
+    }
+
+    useEffect(()=>{
+        gatherInfo()
+    },[])
+
     const collecting=(eve)=>{
         const{name,value}=eve.target
-        setDatatype((old)=>{
+        setLogistics((old)=>{
             return{
                 ...old,
                 [name]:value
@@ -37,10 +49,14 @@ export const Form =() => {
         })
     }
 
+    const nav=useNavigate()
+
+
     const publish = async()=>{
         //alert(JSON.stringify(datatype))
-        const t = await callPost(datatype)
+        const t = await callUpdate(logistics)
         alert(JSON.stringify(t.data))
+        nav('/')
     }
 
     return(
@@ -55,7 +71,7 @@ export const Form =() => {
                             color="primary"
                             onChange={collecting}
                             name="patientId" 
-                            value={datatype.patientId}
+                            value={logistics.patientId} 
                             label="Patient ID" 
                             variant="filled" 
                         />                      
@@ -63,7 +79,7 @@ export const Form =() => {
                             className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
-                            value={datatype.patientName}
+                            value={logistics.patientName}
                             name="patientName" 
                             label="Patient Name" 
                             variant="outlined" 
@@ -75,7 +91,7 @@ export const Form =() => {
                             color="primary"
                             name="patientAge"
                             onChange={collecting} 
-                            value={datatype.patientAge}
+                            value={logistics.patientAge}
                             label="Patient Age" 
                             variant="filled" 
                         />
@@ -84,7 +100,7 @@ export const Form =() => {
                             className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
-                            value={datatype.patientBloodGroup}
+                            value={logistics.patientBloodGroup}
                             name="patientBloodGroup" 
                             label="Patient BloodGroup" 
                             variant="outlined" 
@@ -96,7 +112,7 @@ export const Form =() => {
                             className="col-md-6 mb-sm-2 col-sm-6"
                             color="primary"
                             onChange={collecting}
-                            value={datatype.patientAddress}
+                            value={logistics.patientAddress}
                             name="patientAddress" 
                             label="Patient Address" 
                             variant="outlined" 
@@ -107,7 +123,7 @@ export const Form =() => {
                             className="col-md-4 mb-2 col-sm-6 m-2"
                             color="primary"
                             onChange={collecting}
-                            value={datatype.patientContact}
+                            value={logistics.patientContact}
                             name="patientContact" 
                             label="Patient Contact" 
                             variant="filled" 
@@ -117,7 +133,7 @@ export const Form =() => {
                             color="primary"
                             onChange={collecting}
                             name="issue" 
-                            value={datatype.issue}
+                            value={logistics.issue}
                             label="issue" 
                             variant="outlined" 
                         />
@@ -130,7 +146,7 @@ export const Form =() => {
                             <Select
                 
                                 id="status"
-                                value={datatype.status}
+                                value={logistics.status}
                                 label="Status"
                                 variant="outlined"
                                 onChange={collecting}

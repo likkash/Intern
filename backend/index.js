@@ -5,10 +5,10 @@ const path = require('path');
 const exp = express()
 
 exp.use("/hospital",data)
-exp.use(express.static(path.join(__dirname, '../backend/api/build')));
+exp.use(express.static(path.join(__dirname, '../frontend/build')));
 
 exp.get('*', async(request, response) => {
-    response.sendFile(path.join(__dirname, '../backend/api/build/index.html'));
+    response.sendFile(path.join(__dirname, '../frontend/build/index.html'));
 });
 
 

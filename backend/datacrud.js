@@ -73,4 +73,14 @@ router.delete('/erase/:id',async(request,response)=>{
 })
 
 
+router.put('/',async(request,response)=>{
+    const data = await HospitalInfo.findByIdAndUpdate(id=request.body._id,request.body,{new:false})
+    response.json(data)
+})
+
+router.get('/:id',async(request,response)=>{
+    const consignment = await HospitalInfo.findById(id=request.params.id)
+    response.json(consignment)
+})
+
 module.exports=router
